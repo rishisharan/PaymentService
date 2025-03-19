@@ -11,6 +11,7 @@
 	<groupId>com.paymentservice</groupId>
 	<artifactId>paymentservice</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
 	<name>paymentservice</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
@@ -49,6 +50,12 @@
 			<artifactId>reactor-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.36</version>
+		    <scope>provided</scope>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -57,6 +64,19 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			<plugin>
+		        <groupId>com.google.cloud.tools</groupId>
+		        <artifactId>jib-maven-plugin</artifactId>
+		        <version>3.4.4</version>
+		        <configuration>
+		       	  <from>
+            		<image>openjdk:17.0.2-jdk-slim</image>  <!-- Use the correct image -->
+        		  </from>
+		          <to>
+		            <image>onlinegrocery/${project.artifactId}:s1</image>
+		          </to>
+		        </configuration>
+      		</plugin>
 		</plugins>
 	</build>
 
