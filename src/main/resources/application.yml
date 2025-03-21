@@ -3,3 +3,6 @@ server:
 spring:
   application:
    name: paymentservice
+metrics:
+ tags:
+  application: ${spring.application.name}
